@@ -20,7 +20,7 @@ const maxArea = (arr) => {
     let area = width * height;
     max = Math.max(max, area);
 
-    if (arr[p1] < arr[p2]) {
+    if (arr[p1] <= arr[p2]) {
       p1++;
     } else {
       p2--;
