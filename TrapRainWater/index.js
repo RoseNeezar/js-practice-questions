@@ -1,14 +1,26 @@
 // Given an array of integers, return the max area of water in tank (between 2 poles)
 const trapped = (arr) => {
-  let maxVal = 0;
+  let totalWater = 0;
+
   for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      const area = Math.min(arr[i], arr[j]) * (j - i);
-      if (area > maxVal) {
-        maxVal = Math.max(maxVal, area);
-      }
+    let left = i,
+      right = i,
+      maxLeft = 0,
+      maxRight = 0;
+    while (left >= 0) {
+      maxLeft = Math.max(maxLeft, arr[left]);
+      left--;
+    }
+    while (right < arr.length) {
+      maxRight = Math.max(maxRight, arr[right]);
+      right++;
+    }
+    const currentWater = Math.min(maxLeft, maxRight) - arr[i];
+
+    if (currentWater >= 0) {
+      totalWater += currentWater;
     }
   }
-  return maxVal;
+  return totalWater;
 };
 module.exports = trapped;
