@@ -6,3 +6,7 @@ test("should return true", () => {
 test("should return true", () => {
   expect(longestSubstring("thisishowwedoit")).toEqual(6);
 });
+
+test("should return true", () => {
+  expect(longestSubstring("abcbdca")).toEqual(4);
+});
