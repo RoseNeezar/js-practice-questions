@@ -1,13 +1,13 @@
 const Palindrome = require("./index");
 
 test("should return true", () => {
-  expect(Palindrome("abba")).toBeTruthy();
+  expect(Palindrome("aba")).toBeTruthy();
 });
 
 test("should return true", () => {
-  expect(Palindrome("A man, a plan, a canal: Panama")).toBeTruthy();
+  expect(Palindrome("abca")).toBeTruthy();
 });
 
 test("should return false", () => {
-  expect(Palindrome("abcdefg")).toBeFalsy();
+  expect(Palindrome("abc")).toBeFalsy();
 });
